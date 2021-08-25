@@ -1,0 +1,12 @@
+{
+  "name": "template_express",
+  "version": "1.0.0",
+  "description": "Template para realizar aplicaciones en Express con TS",
+  "main": "dist/main.js",
+  "repository": "https://github.com/TavoJG/Express-TS-Template.git",
+  "scripts": {
+    "test": "tsc && nodemon ./dist/main.js"
+  },
+  "author": "Octavio Jimenez G",
+  "license": "MIT"
+}
