@@ -1,11 +1,15 @@
 import { Application, Request, Response } from 'express';
-import errorResponse from '../modules/errors/responses';
+import response from '../modules/responses';
 
 export default class CommonRoutes {
 	public route(app: Application) {
+		// HealthCheck
+		app.all('/health-check', (req: Request, res: Response) =>
+			response(res, 200, 'Everything Ok :)')
+		);
 		// URL no registrada
 		app.all('*', (req: Request, res: Response) => {
-			errorResponse('La URL solicitada no existe', 404, res);
+			response(res, 404, 'La URL solicitada no existe');
 		});
 	}
 }

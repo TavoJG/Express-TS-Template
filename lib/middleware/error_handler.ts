@@ -1,32 +1,21 @@
 import { Request, Response, NextFunction } from 'express';
+import { error as ValidatorError } from 'express-openapi-validator';
+import { isHttpError } from 'http-errors';
 
-import {
-	BadRequestError,
-	NotFoundError,
-	UnauthorizedError,
-	ForbiddenError,
-	InternalError,
-} from '../modules/errors';
-import errorResponse from '../modules/errors/responses';
+import response from '../modules/responses';
 import logger from '../config/logger';
+
+const { BadRequest, NotFound, MethodNotAllowed } = ValidatorError;
 
 // eslint-disable-next-line
 const errorHandler = (error: unknown, req: Request, res: Response, next: NextFunction) => {
-	if (error instanceof BadRequestError) {
-		return errorResponse(error.message, 400, res);
-	}
-	if (error instanceof UnauthorizedError) {
-		return errorResponse(error.message, 401, res);
-	}
-	if (error instanceof ForbiddenError) {
-		return errorResponse(error.message, 403, res);
-	}
-	if (error instanceof NotFoundError) {
-		return errorResponse(error.message, 404, res);
-	}
-	if (error instanceof InternalError || error instanceof Error) {
-		logger.error(error);
-		return errorResponse(error.message, 500, res);
+	if (
+		error instanceof BadRequest ||
+		error instanceof NotFound ||
+		error instanceof MethodNotAllowed ||
+		isHttpError(error)
+	) {
+		return response(res, error.status || 500, error.message);
 	}
 
 	logger.error(error);

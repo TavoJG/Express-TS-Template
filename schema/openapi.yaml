@@ -1,0 +1,28 @@
+openapi: '3.0.0'
+info:
+  title: Admin API Docs
+  version: 1.0.0
+paths:
+  /health-check:
+    get:
+      operationId: getHealthCheck
+      description: 'Return health status of server'
+      responses:
+        '200':
+          description: Everything is OK
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/GeneralResponse'
+components:
+  schemas:
+    GeneralResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        status:
+          type: string
+          example: OK
