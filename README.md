@@ -49,6 +49,12 @@ yarn test ## Run tests with Jest
 
 All the tests suites live on [tests](./tests) folder. If you need some Env variables, you can declare it on [env](./tests/env.js) file
 
+## Running in Docker
+
+---
+
+There is a [Dockerfile](./Dockerfile) to build and run a image on a container.
+
 ## Something more
 
 ---
