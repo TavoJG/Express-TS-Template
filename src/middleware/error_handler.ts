@@ -2,8 +2,8 @@ import { Request, Response, NextFunction } from 'express';
 import { error as ValidatorError } from 'express-openapi-validator';
 import { isHttpError } from 'http-errors';
 
-import response from '../modules/responses';
-import logger from '../config/logger';
+import response from '@lib/responses';
+import logger from '@config/logger';
 
 const { BadRequest, NotFound, MethodNotAllowed } = ValidatorError;
 

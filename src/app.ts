@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import errorHandler from './middleware/error_handler';
-import CommonRoutes from './routes/common_routes';
-import morganMiddleware from './middleware/morgan_middleware';
-import swaggerMiddleware from './middleware/swagger_middleware';
-import validatorMiddleware from './middleware/validator_middleware';
+import errorHandler from '@middleware/error_handler';
+import CommonRoutes from '@routes/common_routes';
+import morganMiddleware from '@middleware/morgan_middleware';
+import swaggerMiddleware from '@middleware/swagger_middleware';
+import validatorMiddleware from '@middleware/validator_middleware';
 
 class App {
 	public app: express.Application;

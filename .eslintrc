@@ -50,5 +50,10 @@
 				"tsx": "never"
 			}
 		]
+	},
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
 	}
 }

@@ -2,8 +2,8 @@ import * as path from 'path';
 import { existsSync, mkdirSync } from 'fs';
 import { Logger } from 'winston';
 import winston = require('winston');
-import environment from '../environments';
-import Environments from '../environments/constants';
+import environment from '@environments/index';
+import Environments from '@environments/constants';
 
 const rootDir: string = path.resolve(__dirname, '../../');
 

@@ -1,5 +1,5 @@
 import { Application, Request, Response } from 'express';
-import response from '../modules/responses';
+import response from '@lib/responses';
 
 export default class CommonRoutes {
 	public route(app: Application) {

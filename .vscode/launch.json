@@ -9,9 +9,17 @@
 			"type": "node",
 			"request": "launch",
 			"runtimeExecutable": "node",
-			"runtimeArgs": ["--nolazy", "-r", "ts-node/register/transpile-only", "-r", "dotenv/config"],
+			"runtimeArgs": [
+				"--nolazy",
+				"-r",
+				"ts-node/register/transpile-only",
+				"-r",
+				"dotenv/config",
+				"-r",
+				"tsconfig-paths/register"
+			],
 
-			"args": ["lib/server.ts"],
+			"args": ["src/server.ts"],
 
 			"cwd": "${workspaceRoot}",
 			"internalConsoleOptions": "openOnSessionStart",
