@@ -10,9 +10,9 @@
 		"dev": "nodemon -r dotenv/config -r tsconfig-paths/register --watch './src/**/*.ts' --exec 'ts-node' ./src/server.ts",
 		"start": "TS_NODE_BASEURL=./dist node -r dotenv/config -r tsconfig-paths/register ./dist/server.js",
 		"build": "tsc -p tsconfig.prod.json",
-		"lint": "eslint lib/**/*.ts",
-		"lint-fix": "eslint --fix lib/**/*.ts",
-		"pretty": "prettier --write 'lib/**/*.ts'",
+		"lint": "eslint src/**/*.ts",
+		"lint-fix": "eslint --fix src/**/*.ts",
+		"pretty": "prettier --write 'src/**/*.ts'",
 		"prepare": "husky install",
 		"precommit": "yarn lint-fix && yarn pretty",
 		"prepush": "yarn lint"
